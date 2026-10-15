@@ -8,10 +8,6 @@ Power BI financial analysis project focused on **Actual vs. Budget**, **current 
 
 The report transforms finance data into an interactive reporting layer for analyzing sales, expenditures, net income, balance sheet accounts, budget achievement, and organizational performance.
 
-### Income Statement Dashboard
-
-![Income Statement Dashboard](images/income-statement.png)
-
 ## Report Pages
 
 ### Income Statement
@@ -20,11 +16,11 @@ Executive view of **Sales, Expenditures, and Net Income**, including current-yea
 
 ![Income Statement](images/income-statement.png)
 
-### Balance Statement
+### Balance Sheet
 
 Balance sheet analysis covering **Current Assets, Property Plant & Equipment, Equity, and Liabilities**, with account-level and organization-level CY vs. LY comparisons.
 
-![Balance Statement](images/balance-statement.png)
+![Balance Sheet](images/balance-statement.png)
 
 ### Income Statement Report
 
