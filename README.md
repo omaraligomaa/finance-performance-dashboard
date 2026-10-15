@@ -1,47 +1,70 @@
 # Finance Performance Dashboard
 
-A Power BI financial analytics project focused on monitoring financial performance through **Actual vs. Budget**, **year-over-year comparisons**, **variance analysis**, and structured financial statements.
+Power BI financial analysis project focused on **Actual vs. Budget**, **current year vs. last year**, variance analysis, financial statements, and organizational performance.
+
+**Power BI · DAX · Power Query · Excel · Dimensional Modeling**
 
 ## Project Overview
 
-This project turns finance data into an interactive reporting layer for reviewing revenue, expenditures, net income, balance sheet performance, and organizational trends.
+The report transforms finance data into an interactive reporting layer for analyzing sales, expenditures, net income, balance sheet accounts, budget achievement, and organizational performance.
 
-The Power BI report contains three main pages:
+### Income Statement Dashboard
 
-- **Financial Dashboard** — executive-level KPI and variance monitoring
-- **Balance Sheet** — balance-focused analysis with current and prior-year comparisons
-- **Income Statement Report** — structured income statement analysis
+![Income Statement Dashboard](images/income-statement.png)
+
+## Report Pages
+
+### Income Statement
+
+Executive view of **Sales, Expenditures, and Net Income**, including current-year vs. last-year comparisons, quarterly performance, and organization-level analysis.
+
+![Income Statement](images/income-statement.png)
+
+### Balance Statement
+
+Balance sheet analysis covering **Current Assets, Property Plant & Equipment, Equity, and Liabilities**, with account-level and organization-level CY vs. LY comparisons.
+
+![Balance Statement](images/balance-statement.png)
+
+### Income Statement Report
+
+Detailed financial statement matrix with expandable account hierarchy, **Actual Value, Budget Value, Achievement %**, and conditional performance indicators.
+
+![Income Statement Report](images/income-statement-report.png)
 
 ## Business Questions
 
 The report is designed to answer questions such as:
 
-- How is actual financial performance tracking against budget?
-- How does current performance compare with the previous year?
-- Where are the largest revenue and expenditure variances?
-- How is net income changing over time?
-- Which organizations or account groups contribute most to financial performance?
-- What is the current position across the balance sheet and income statement?
+- How is current financial performance comparing with the previous year?
+- How are actual results tracking against budget?
+- Which financial categories show the largest variances?
+- How are Sales, Expenditures, and Net Income changing across periods?
+- Which organizations contribute most to financial performance?
+- Which balance sheet accounts are driving the largest changes?
+- Which income statement accounts are over or under budget?
 
 ## Data Model
 
-The report uses a dimensional model built around finance reporting entities including:
+The semantic model is centered on `FactFinance` and connected to finance dimensions:
 
-- `DimDate`
 - `DimAccount`
 - `DimOrganization`
-- `MeasuresTable`
+- `DimDate`
+- `DimDepartmentGroup`
+- `DimScenario`
 
-The report also uses account hierarchy levels and date attributes to support drill-down analysis across financial statements and time periods.
+The model supports account hierarchies, organization analysis, scenario analysis, and time-based reporting.
+
+![Finance Data Model](images/data-model.png)
 
 ## Key Measures
 
-Examples of measures used in the report include:
+Examples of measures implemented in the Power BI report include:
 
-- Revenue Actual
-- Revenue LY Actual
+- Revenue / Sales Actual
+- Revenue / Sales LY Actual
 - Revenue Variance
-- Revenue Variance Indicator
 - Expenditures Actual
 - Expenditures LY Actual
 - Expenditures Variance
@@ -52,22 +75,23 @@ Examples of measures used in the report include:
 - Balance LY Actual
 - Balance YOY Variance
 - Income Statement Achievement %
-- Income Statement Actual / Budget values
-- KPI indicator and conditional-formatting measures
+- Income Statement Actual Value
+- Income Statement Budget Value
+- KPI and conditional-formatting indicators
 
 ## Report Features
 
 - Executive KPI cards
 - Actual vs. Budget analysis
-- Year-over-year comparison
-- Revenue and expenditure variance analysis
+- Current Year vs. Last Year analysis
+- Quarterly and monthly financial analysis
+- Organization-level comparison
+- Account hierarchy drill-down
 - Balance sheet reporting
 - Income statement reporting
-- Organization-level analysis
-- Account hierarchy drill-down
-- Date filtering by year, quarter, and month
+- Achievement percentage calculations
 - Conditional KPI indicators
-- Interactive slicers and navigation
+- Interactive year filtering
 
 ## Tools & Technologies
 
@@ -83,10 +107,15 @@ Examples of measures used in the report include:
 ```text
 finance-performance-dashboard/
 ├── README.md
-├── data/
-│   └── Finance Dataset.xlsx
 ├── dashboard/
 │   └── Finance Dashboard.pbix
+├── data/
+│   └── Finance Dataset.xlsx
+├── images/
+│   ├── income-statement.png
+│   ├── balance-statement.png
+│   ├── income-statement-report.png
+│   └── data-model.png
 └── docs/
     ├── report-structure.md
     └── measures.md
